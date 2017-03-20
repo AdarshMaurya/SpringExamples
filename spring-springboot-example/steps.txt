@@ -1,0 +1,70 @@
+Five Steps
+~~~~~~~~~~~~~
+1. Spring Boot Starter Parent
+2. Spring Boot Starter Web
+3. Java Version 8
+4. Spring Boot Plugin
+
+5. Create Spring Boot Application Launcher
+
+TODO
+~~~~~~~~~~~~~
+
+
+
+
+Theory
+~~~~~~~~~~~~~
+1. How does spring Framework know where to search for beans to manage?
+@ComponentScan => com.softhinkers
+~~~~~~~~~~~~~
+2. What are annotations Spring looks for?
+@Components, @Services, {@Controller, @RestController}, @Repository
+
+~~~~~~~~~~~~~
+3. What if Spring does not finds what it is looking for?
+2017-03-20 02:52:15.504  WARN 4588 --- [           main] ationConfigEmbeddedWebApplicationContext : 
+Exception encountered during context initialization - cancelling refresh attempt: 
+org.springframework.beans.factory.UnsatisfiedDependencyException: 
+Error creating bean with name 'welcomeController': 
+Unsatisfied dependency expressed through field 'service'; 
+nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: 
+No qualifying bean of type 'com.softhinkers.springboot.web.WelcomeService' available: 
+expected at least 1 bean which qualifies as autowire candidate. 
+Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+~~~~~~~~~~~~~
+
+4. What does @SpringBootApplication does?
+Scans automatically for the components in the package where it is defined.
+ComponentScans => com.softhinkers
+->Creates the instance of all the components
+-> For @Autowired it creates the dependency i.e dependency can be matched based on interface or class
+
+
+
+
+spring-boot-starter-web [To build rest-services, mvc web application, ]
+~~~~~~~~~~~~~
+1. What version of spring-boot-starter-web is used?
+
+~~~~~~~~~~~~~
+2. What dependencies does spring boot starter web brings in?
+
+~~~~~~~~~~~~~
+3. What auto configurations does spring boot starter web brings in?
+
+~~~~~~~~~~~~~
+
+
+
+
+
+
+spring-boot-starter-parent
+~~~~~~~~~~~~~
+1. Dependency version
+~~~~~~~~~~~~~
+2. Plugins
+~~~~~~~~~~~~~
+3. Java Version
+~~~~~~~~~~~~~

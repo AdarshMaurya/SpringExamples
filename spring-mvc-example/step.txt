@@ -1,0 +1,19 @@
+http://localhost:8080/spring-mvc/login
+
+spring-mvc
+DispatcherServlet -> Front Controller
+
+"login" (no ResolveBody)
+checks for ViewResolver
+
+/login -> LoginController (Handler)
+Hello World
+
+
+ViewResolver
+class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+prefix - /WEB-INF/views/
+suffix - .jsp 
+
+login.jsp -> View
+/WEB-INF/views/login.jsp

@@ -1,0 +1,13 @@
+1.http://start.spring.io/
+2. PostMaster test: json for POST: url: http://localhost:8080/students/Student1/courses
+{
+  "name": "Microservices",
+  "description": "10 Steps",
+  "steps": [
+    "Learn How to Break Things Up",
+    "Automate the hell out of everything",
+    "Have fun"
+  ]
+}
+
+3. PostMaster test: GET http://localhost:8080/students/Student1/courses/Course1
