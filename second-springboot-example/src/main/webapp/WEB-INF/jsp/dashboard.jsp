@@ -40,16 +40,16 @@
 					<span class="icon-bar"></span> <span class="icon-bar"></span> <span
 						class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="#">Barclays IB QA</a>
+				<a class="navbar-brand" href="/">Barclays IB QA</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 				<ul class="nav navbar-nav">
-					<li><a href="#">Home</a></li>
-					<li class="active"><a href="#">Dashboard</a></li>
-					<li><a href="#">2017 Milestones</a></li>
-					<li><a href="#">Projects</a></li>
-					<li><a href="#">QA Team</a></li>
-					<li><a href="#">Inbuilt Tools</a></li>
+					<li><a href="/">Home</a></li>
+					<li class="active"><a href="/dashboard">Dashboard</a></li>
+					<li><a href="/milestone">2017 Milestones</a></li>
+					<li><a href="/all-project">Projects</a></li>
+					<li><a href="/qa_team">QA Team</a></li>
+					<li><a href="/inbuilt_tools">Inbuilt Tools</a></li>
 				</ul>
 			</div>
 		</div>
@@ -60,12 +60,12 @@
 			<div class="col-sm-3 sidenav hidden-xs">
 				<h2>Barclays IB QA</h2>
 				<ul class="nav nav-pills nav-stacked">
-					<li><a href="#section0">Home</a></li>
-					<li class="active"><a href="#section1">Dashboard</a></li>
-					<li><a href="#section2">2017 Milestones</a></li>
-					<li><a href="#section3">Projects</a></li>
-					<li><a href="#section3">QA Team</a></li>
-					<li><a href="#section4">Inbuilt Tools</a></li>
+					<li><a href="/">Home</a></li>
+					<li class="active"><a href="/dashboard">Dashboard</a></li>
+					<li><a href="/milestone">2017 Milestones</a></li>
+					<li><a href="/all-project">Projects</a></li>
+					<li><a href="/qa_team">QA Team</a></li>
+					<li><a href="/inbuilt_tools">Inbuilt Tools</a></li>
 				</ul>
 				<br>
 			</div>

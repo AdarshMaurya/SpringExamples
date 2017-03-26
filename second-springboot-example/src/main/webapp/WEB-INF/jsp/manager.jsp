@@ -13,11 +13,6 @@
 
 <title>Barclays IB QA Dashboard | Home</title>
 
-<script language="Javascript">
-	function refreshpage() {
-		document.forms.form1.submit();
-	}
-</script>
 
 <link href="static/css/bootstrap.min.css" rel="stylesheet">
 <link href="static/css/style.css" rel="stylesheet">
@@ -34,8 +29,8 @@
 			<a href="/" class="navbar-brand">IB Dashboard</a>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="new-task">New Task</a></li>
-					<li><a href="all-tasks">All Tasks</a></li>
+					<li><a href="new-project">New Project</a></li>
+					<li><a href="all-project">All Project</a></li>
 				</ul>
 			</div>
 		</div>
@@ -47,49 +42,35 @@
 				<div class="jumbotron text-center">
 					<h1>Welcome to IB DashBoard Manager</h1>
 				</div>
-
-
-				<h2>
-					Pie Chart
-					</h1>
-					<%
-						/* response.setIntHeader("Refresh", 5); */
-					%>
-					<form id="form1">
-						<img src="/piechart" width="750" height="400" border="0" />
-						 <input type="button" onclick="refreshpage()" value="Refresh"/>
-					</form>
 			</div>
 		</c:when>
 		<c:when test="${mode == 'MODE_TASKS'}">
 			<div class="container text-center" id="tasksDiv">
-				<h3>My Tasks</h3>
+				<h3>Projects</h3>
 				<hr>
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered text-left">
 						<thead>
 							<tr>
 								<th>Id</th>
-								<th>Name</th>
+								<th>Project Name</th>
 								<th>Description</th>
-								<th>Date Created</th>
-								<th>Finished</th>
-								<th></th>
-								<th></th>
+								<th>Updated Date</th>
+								<th>Edit</th>
+								<th>Delete</th>
 							</tr>
 						</thead>
 						<tbody>
 							<c:forEach var="task" items="${tasks}">
 								<tr>
-									<td>${task.id}</td>
-									<td>${task.name}</td>
-									<td>${task.description}</td>
+									<td>${task.project_id}</td>
+									<td>${task.project_name}</td>
+									<td>${task.project_desc}</td>
 									<td><fmt:formatDate pattern="yyyy-MM-dd HH:mm:ss"
-											value="${task.dateCreated}" /></td>
-									<td>${task.finished}</td>
-									<td><a href="update-task?id=${task.id}"><span
+											value="${task.project_added_date}" /></td>
+									<td><a href="update-project?id=${task.project_id}"><span
 											class="glyphicon glyphicon-pencil"></span></a></td>
-									<td><a href="delete-task?id=${task.id}"><span
+									<td><a href="delete-project?id=${task.project_id}"><span
 											class="glyphicon glyphicon-trash"></span></a></td>
 								</tr>
 							</c:forEach>
@@ -100,26 +81,26 @@
 		</c:when>
 		<c:when test="${mode == 'MODE_NEW' || mode == 'MODE_UPDATE'}">
 			<div class="container text-center">
-				<h3>Manage Task</h3>
+				<h3>Add Project</h3>
 				<hr>
-				<form class="form-horizontal" method="POST" action="save-task">
-					<input type="hidden" name="id" value="${task.id}" />
+				<form class="form-horizontal" method="POST" action="save-project">
+					<input type="hidden" name="project_id" value="${task.project_id}" />
 					<div class="form-group">
 						<label class="control-label col-md-3">Name</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="name"
-								value="${task.name}" />
+							<input type="text" class="form-control" name="project_name"
+								value="${task.project_name}" />
 						</div>
 					</div>
 					<div class="form-group">
 						<label class="control-label col-md-3">Description</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="description"
-								value="${task.description}" />
+							<input type="text" class="form-control" name="project_desc"
+								value="${task.project_desc}" />
 						</div>
 					</div>
 					<div class="form-group">
-						<label class="control-label col-md-3">Finished</label>
+				<!-- 		<label class="control-label col-md-3">Finished</label>
 						<div class="col-md-7">
 							<input type="radio" class="col-sm-1" name="finished" value="true" />
 							<div class="col-sm-1">Yes</div>
@@ -127,7 +108,7 @@
 								value="false" checked />
 							<div class="col-sm-1">No</div>
 						</div>
-					</div>
+					</div> -->
 					<div class="form-group">
 						<input type="submit" class="btn btn-primary" value="Save" />
 					</div>
